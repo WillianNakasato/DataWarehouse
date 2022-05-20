@@ -1,1 +1,15 @@
-# DataWarehouse
+# DataWarehouse - Criando o usuário DW
+
+CREATE TABLESPACE TBS_DW
+LOGGING DATAFILE '/u01/app/oracle/oradata/orcl/TBS_DW.dbf' 
+SIZE 1M AUTOEXTEND ON NEXT 10M MAXSIZE UNLIMITED EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO;
+
+
+CREATE USER dw IDENTIFIED BY dw0123 DEFAULT TABLESPACE TBS_DW;
+GRANT CONNECT, RESOURCE TO dw;
+GRANT UNLIMITED TABLESPACE TO dw;
+
+grant select on starea.ST_DIM_CLIENTE to dw;
+grant select on starea.ST_DIM_PRODUTO to dw;
+grant select on starea.ST_DIM_LOCALIDADE to dw;
+grant select on starea.ST_VENDA to dw;
