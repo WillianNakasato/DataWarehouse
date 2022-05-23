@@ -1,4 +1,4 @@
-# DataWarehouse - Criando o usuário DW
+# 1 - DataWarehouse - Criando o usuário DW
 
 CREATE TABLESPACE TBS_DW
 LOGGING DATAFILE '/u01/app/oracle/oradata/orcl/TBS_DW.dbf' 
